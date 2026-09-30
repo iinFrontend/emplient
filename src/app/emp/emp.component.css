@@ -1,0 +1,133 @@
+.playfair-display-regular {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Playfair Display", serif;
+  background-color: #fff0f6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.2);
+}
+
+thead {
+  background-color: #e91e63;
+  color: #ffffff;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+/* Salary column aligned to the right */
+th:last-child,
+td:last-child {
+  text-align: right;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f8bbd0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fce4ec;
+}
+
+tbody tr:hover {
+  background-color: #f8bbd0;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+
+
+.modal-content {
+  font-family: "Playfair Display", serif;
+  background-color: #fff0f6;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.3);
+}
+
+.modal-header {
+  background-color: #e91e63;
+  color: #ffffff;
+  border-bottom: none;
+  padding: 12px 16px;
+}
+
+.modal-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Turns the default dark close (X) icon white */
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.9;
+}
+
+.modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 16px;
+  color: #880e4f;
+  background-color: #fce4ec;
+}
+
+.modal-footer {
+  border-top: 1px solid #f8bbd0;
+  background-color: #fff0f6;
+  padding: 12px 16px;
+}
+
+/* Primary button: hot pink */
+.modal-footer .btn-primary {
+  background-color: #e91e63;
+  border-color: #e91e63;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.modal-footer .btn-primary:hover,
+.modal-footer .btn-primary:focus {
+  background-color: #c2185b;
+  border-color: #c2185b;
+}
+
+/* Secondary button: soft pink outline style */
+.modal-footer .btn-secondary,
+.btn{
+  background-color: #f8bbd0;
+  border-color: #f8bbd0;
+  color: #880e4f;
+  font-family: inherit;
+}
+
+.modal-footer .btn-secondary:hover,
+.modal-footer .btn-secondary:focus,
+.btn:hover,
+.btn:focus{
+  background-color: #f48fb1;
+  border-color: #f48fb1;
+  color: #880e4f;
+}

@@ -8,5 +8,6 @@ export class ApiService {
 
     getEmployees(){
         let url = `${this.host}/employees`
+        return this.http.get(url);
     }
 }

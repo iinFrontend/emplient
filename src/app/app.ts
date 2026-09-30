@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { EmpComponent } from './emp/emp.component';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [EmpComponent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
