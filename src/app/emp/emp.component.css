@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "bootstrap-icons";
 
 html{
   background: linear-gradient(135deg,#d63f72, #d34db6);

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 
 @Service()
-export class ApiService {
+export class EmployeeService {
     host = 'http://localhost:8000/api';
     http = inject(HttpClient)
 
@@ -15,4 +15,14 @@ export class ApiService {
         let url = `${this.host}/employees`
         return this.http.post(url,emp)
     }
+
+    deleteEmp(id: any){
+        let url = `${this.host}/employees/${id}`
+        return this.http.delete(url,id)
+    }
+
+    updateEmp(id: any, emp: any){
+        return this.http.put(`${this.host}/employees/${id}`, emp);
+    }
 }
+
