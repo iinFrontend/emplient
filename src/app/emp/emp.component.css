@@ -1,3 +1,15 @@
+@import "bootstrap";
+
+html{
+  background: linear-gradient(135deg,#d63f72, #d34db6);
+}
+
+h1{
+  color:#880e4f;
+  font-weight: 800;
+  place-self: center;
+}
+
 .playfair-display-regular {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -32,7 +44,6 @@ th {
   font-weight: 700;
 }
 
-/* Salary column aligned to the right */
 th:last-child,
 td:last-child {
   text-align: right;
@@ -76,9 +87,9 @@ tbody tr:last-child {
 .modal-title {
   font-weight: 700;
   letter-spacing: 0.5px;
+  color:#ffe1eb
 }
 
-/* Turns the default dark close (X) icon white */
 .modal-header .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
   opacity: 0.9;
@@ -100,7 +111,6 @@ tbody tr:last-child {
   padding: 12px 16px;
 }
 
-/* Primary button: hot pink */
 .modal-footer .btn-primary {
   background-color: #e91e63;
   border-color: #e91e63;
@@ -114,13 +124,13 @@ tbody tr:last-child {
   border-color: #c2185b;
 }
 
-/* Secondary button: soft pink outline style */
 .modal-footer .btn-secondary,
 .btn{
   background-color: #f8bbd0;
   border-color: #f8bbd0;
   color: #880e4f;
   font-family: inherit;
+  border-radius: 5px;
 }
 
 .modal-footer .btn-secondary:hover,
@@ -130,4 +140,17 @@ tbody tr:last-child {
   background-color: #f48fb1;
   border-color: #f48fb1;
   color: #880e4f;
+}
+
+.launch-btn{
+  margin: 10px;
+}
+
+.input{
+  background-color: #f0a0b8;
+  border-radius: 5px;
+}
+
+.input:focus{
+  background-color: #e796b1;
 }

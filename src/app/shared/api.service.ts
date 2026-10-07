@@ -10,4 +10,9 @@ export class ApiService {
         let url = `${this.host}/employees`
         return this.http.get(url);
     }
+
+    createEmp(emp: any){
+        let url = `${this.host}/employees`
+        return this.http.post(url,emp)
+    }
 }

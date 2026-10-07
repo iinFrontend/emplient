@@ -1,43 +1,88 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+<div class="container">
+  <h1>Employees</h1>
+  
+  <button class="btn btn-primary launch-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add employee
+  </button>
+  
+  
+  <table class="playfair-display-regular">
+      <thead>
+          <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>city</th>
+              <th>salary</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for (emp of employees; track emp){
+              <tr>
+                  <td>{{emp.id}}</td>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.city}}</td>
+                  <td>{{emp.salary}}</td>
+              </tr>
+          }
+      </tbody>
+  </table>
+  
+<!-- @if(showModal){ -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add a new employee</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="empForm" (ngSubmit)="saveEmp()" id="empForm">
+              <input type="hidden" formControlName="id" />
 
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" class="form-control input" formControlName="name"
+                      [class.is-invalid]="f.name.invalid && f.name.touched" />
+                <div class="invalid-feedback">Name is required (min 2 characters).</div>
+              </div>
 
-<table class="playfair-display-regular">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>city</th>
-            <th>salary</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (emp of employees; track emp){
-            <tr>
-                <td>{{emp.id}}</td>
-                <td>{{emp.name}}</td>
-                <td>{{emp.city}}</td>
-                <td>{{emp.salary}}</td>
-            </tr>
-        }
-    </tbody>
-</table>
+              <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input id="city" class="form-control input" formControlName="city"
+                      [class.is-invalid]="f.city.invalid && f.city.touched" />
+                <div class="invalid-feedback">City is required.</div>
+              </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="mb-3">
+                <label for="salary" class="form-label">Salary</label>
+                <input id="salary" type="number" class="form-control input" formControlName="salary"
+                      [class.is-invalid]="f.salary.invalid && f.salary.touched" />
+                <div class="invalid-feedback">Enter a valid salary.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="positionId" class="form-label">Position</label>
+                <select id="positionId" class="form-select input" formControlName="positionId"
+                        [class.is-invalid]="f.positionId.invalid && f.positionId.touched">
+                  <option value="" disabled>Select a position</option>
+                  @for (p of positions; track p.id) {
+                    <option [value]="p.id">{{ p.title }}</option>
+                  }
+                </select>
+                <div class="invalid-feedback">Please select a position.</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" form="empForm">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
+
+  
+    <!-- <div class="modal-backdrop fade show"></div> -->
+  
+
   </div>
-</div>
